@@ -1,0 +1,44 @@
+<!doctype html>
+<html ng-app="NewsApp">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href='http://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="materialize/css/materialize.css">
+	<link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+	<script src="js/modernizr.js"></script> <!-- Modernizr -->
+  	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script> <!-- Angular -->
+    <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script><!-- Firebase -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
+	<title>NIS PAPER</title>
+</head>
+<body ng-controller="NewsController">
+  <div id="login">
+    <div class="row">
+      <div class="col s12 m8 l6 offset-m2 offset-l3">
+        <div class="card">
+          <div class="card-content teal-text">
+              <span class="card-title">Authentication</span>
+              <div class="row">
+                 <div class="input-field col s6">
+                  <input id="email" type="text">
+                  <label for="email">Email</label>
+                 </div>
+                  <div class="input-field col s6">
+                  <input id="password" type="password">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+               <a class="waves-effect waves-light btn" id="btnLogin">Login</a>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+<script src="js/jquery-2.1.1.js"></script>
+<script src="materialize/js/materialize.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
+</body>
+</html>
