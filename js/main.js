@@ -1,13 +1,3 @@
-var config = {
-    apiKey: "AIzaSyAPaLhE2GLW-Ifxnej6EzUXpGKpSbMnT-o",
-    authDomain: "nis-paper-a4326.firebaseapp.com",
-    databaseURL: "https://nis-paper-a4326.firebaseio.com",
-    projectId: "nis-paper-a4326",
-    storageBucket: "nis-paper-a4326.appspot.com",
-    messagingSenderId: "524508563244"
-  };
-  firebase.initializeApp(config);
-
 jQuery(document).ready(function($){
 	//open navigation clicking the menu icon
 	$('.cd-nav-trigger').on('click', function(event){
@@ -80,45 +70,43 @@ jQuery(document).ready(function($){
 const email = document.getElementById('email');
 const password = document.getElementById('password');
 const btnLogin = document.getElementById('btnLogin');
-
-btnLogin.addEventListener('click', e => {
-    const txtemail = email.value;
-    const txtpassword = password.value;
-    const promise = firebase.auth().signInWithEmailAndPassword(txtemail, txtpassword);
-});
-
+const reportLog = document.getElementById('reportLog');
 
       
       // Add a realtime listener
       firebase.auth().onAuthStateChanged(firebaseUser => {
+         
           if(firebaseUser){
             //Change UI
-            console.log(firebaseUser);
+      
+          console.log(firebaseUser);
              }
           else{
-            //Change UI
-            console.log('not logged in');
+        
           }
       });
       
 
 
-
+const header = document.getElementById('header');
+const short = document.getElementById('short');
+const text = document.getElementById('text');
 
 
 var app = angular.module('NewsApp', ['firebase']);
-
-
 app.controller('NewsController', function($scope, $firebaseArray) {
     var ref = firebase.database().ref().child('news');
     $scope.news = $firebaseArray(ref);
-
     $scope.send = function() {
+    var user = firebase.auth().currentUser;
+    var email = user.email;
         $scope.news.$add({
-            todo: $scope.todoText,
-            date: Date.now()
+            header: $scope.headerText,
+            short: $scope.shortText,
+            text: $scope.Text,
+            redactor: email
         });
-        $scope.todoText = ' ';
+
     }
 
 });

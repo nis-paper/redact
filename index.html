@@ -11,16 +11,29 @@
 	<script src="js/modernizr.js"></script> <!-- Modernizr -->
   	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js"></script> <!-- Angular -->
     <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script><!-- Firebase -->
+    <script>
+    var config = {
+    apiKey: "AIzaSyAPaLhE2GLW-Ifxnej6EzUXpGKpSbMnT-o",
+    authDomain: "nis-paper-a4326.firebaseapp.com",
+    databaseURL: "https://nis-paper-a4326.firebaseio.com",
+    projectId: "nis-paper-a4326",
+    storageBucket: "nis-paper-a4326.appspot.com",
+    messagingSenderId: "524508563244"
+  };
+  firebase.initializeApp(config);
+
+    </script>
     <script src="https://cdn.firebase.com/libs/angularfire/2.2.0/angularfire.min.js"></script>
 	<title>NIS PAPER</title>
 </head>
 <body ng-controller="NewsController">
-  <div id="login">
+  <div id="main">
+    <div id="login">
     <div class="row">
-      <div class="col s12 m8 l6 offset-m2 offset-l3">
+      <div class="col s12 m8 l4 offset-m2 offset-l4">
         <div class="card">
           <div class="card-content teal-text">
-              <span class="card-title">Authentication</span>
+              <span class="card-title">Authentication to NIS PAPER</span>
               <div class="row">
                  <div class="input-field col s6">
                   <input id="email" type="text">
@@ -30,13 +43,45 @@
                   <input id="password" type="password">
                   <label for="password">Password</label>
                 </div>
-              </div>
-               <a class="waves-effect waves-light btn" id="btnLogin">Login</a>
+                  <p id="reportLog"></p>
+              </div> 
+            <a class="waves-effect waves-light btn" id="btnLogin">Login</a>
           </div>
         </div>
       </div>
     </div>
    </div>
+      
+      
+    <div id="write">
+    <div class="row">
+      <div class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="cardtitle">NEW</span>
+              <div class="row">
+                <div class="input-field col s6">
+                  <input id="header" type="text" ng-model="headerText">
+                  <label for="header">Header</label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="short" type="text" ng-model="shortText">
+                  <label for="short">Short</label>
+                </div>
+             </div>
+           <div class="input-field col s12">
+             <textarea id="text" class="materialize-textarea" data-length="1000" ng-model="Text"></textarea>
+             <label for="text">Text</label>
+           </div>
+            <a class="waves-effect waves-light btn" ng-click="send()">Write</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+   </div>
+    
 <script src="js/jquery-2.1.1.js"></script>
 <script src="materialize/js/materialize.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
