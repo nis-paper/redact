@@ -53,7 +53,7 @@
    </div>
       
       
-    <div id="write">
+    <div id="write" class="hide">
     <div class="row">
       <div class="col s12">
         <div class="card">
@@ -78,6 +78,50 @@
         </div>
       </div>
     </div>
+        
+    			<div id='newsLib' class="cd-content">
+   
+              <div class="row">
+                <div class="col s12">
+                  <div class="card blue lighten-2">
+                    <div class="card-content white-text">
+                      <span class="card-title">News feed</span>
+                    </div>
+                  </div>
+                </div>
+                  
+                <div class="col s12 m6 l3" ng-repeat="m in news |limitTo: order">
+                  <div class="card white-text sticky-action blue lighten-2">
+                    <div class="card-image waves-effect waves-block waves-light">
+                      <img class="activator responsive-img" src={{m.picture||"images/news.jpg"}}>
+                    </div>
+                    <div class="card-content" href="#"{{m.header}}"">
+                      <span class="card-title activator grey-text text-darken-4">{{m.header}}<svg class="right activator" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g class="nc-icon-wrapper" fill="#444444">  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></g></svg>
+                      </span>
+                      <p>{{m.short}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a class="white-text">By: {{m.redactor}}</a>
+                        <a class="white-text">Date: {{m.date |date : format:'longDate' }}</a>
+                   </div>
+                    <div class="card-reveal grey-text">
+                      <span class="card-title grey-text text-darken-4">{{m.header}}<svg class="right card-title" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g class="nc-icon-wrapper" fill="#444444"><path d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"></path>
+    </g>
+</svg></span>
+                      <p>{{m.text}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+                <div class="row">   
+                 
+                    <a class="waves-effect blue waves-light btn-large col s12" ng-click='order = order + 8' ng-init = 'order = 8'>Load more</a>
+              
+                </div>
+                
+			</div>    
+        
     
   </div>
    </div>
