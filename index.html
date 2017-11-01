@@ -90,7 +90,7 @@
                   </div>
                 </div>
                   
-                <div class="col s12 m6 l3" ng-repeat="m in news |limitTo: order">
+                <div class="col s12 m6 l3" ng-repeat="m in news |limitTo: order| reverse">
                   <div class="card white-text sticky-action blue lighten-2">
                     <div class="card-image waves-effect waves-block waves-light">
                       <img class="activator responsive-img" src={{m.picture||"images/news.jpg"}}>
@@ -102,7 +102,7 @@
                     </div>
                     <div class="card-action">
                         <a class="white-text">By: {{m.redactor}}</a>
-                        <a class="white-text">Date: {{m.date |date : format:'longDate' }}</a>
+                        <a class="white-text">Date: {{m.date |date: format:'longDate'}}</a>
                    </div>
                     <div class="card-reveal grey-text">
                       <span class="card-title grey-text text-darken-4">{{m.header}}<svg class="right card-title" xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36"><g class="nc-icon-wrapper" fill="#444444"><path d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"></path>

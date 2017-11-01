@@ -106,6 +106,13 @@ const text = document.getElementById('text');
 
 
 var app = angular.module('NewsApp', ['firebase']);
+
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
+
 app.controller('NewsController', function($scope, $firebaseArray) {
     var ref = firebase.database().ref().child('news');
     $scope.news = $firebaseArray(ref);
