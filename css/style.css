@@ -686,17 +686,41 @@ main.scale-down {
    height: 100vh;
 }
 
-.card-image
+#newsLib
 {
-   height: 230px; 
-}
-.card
-{
-    margin-bottom: 30px;
+    background: url(../images/Blurred%20Background.jpg);
+    background-size: cover;
 }
 
-.btn-large
+p
 {
-    font-size: 100%
+    text-align: justify
 }
 
+iframe
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card-title
+{
+    color: #fff;
+    text-decoration-color: #fff;
+}
+
+.first .card-title
+{
+    font-size: 200%
+}
+
+
+
+.second
+{
+    margin-top: 4vw;
+    margin-bottom: 4vw
+}
