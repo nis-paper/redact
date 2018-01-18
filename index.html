@@ -93,7 +93,7 @@
                 <div class="col s12 m4" ng-repeat="m in news|limitTo: order : news.length - order|reverse" ng-class="{m7:$first, m5:$index==1, second:$index==1}">
                   <div class="card white-text sticky-action blue lighten-3">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img class="activator responsive-img" src={{ m.picture || "images/news.jpg" }}>
+                      <img class="activator responsive-img" src="images/news.jpg">
                     </div>
                     <div class="card-content" href="#"{{m.header}}"">
                       <span class="card-title activator grey-text text-darken-4">{{m.header}}<svg class="right activator" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><g class="nc-icon-wrapper" fill="#444444">  <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"></path></g></svg>
