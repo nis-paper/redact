@@ -93,7 +93,7 @@ btnLogin.addEventListener('click', e => {
           console.log(firebaseUser);
              }
           else{
-          lщgin.classList.remove('hide');
+          login.classList.remove('hide');
           write.classList.add('hide');
           }
       });
