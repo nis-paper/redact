@@ -686,12 +686,6 @@ main.scale-down {
    height: 100vh;
 }
 
-#newsLib
-{
-    background: url(../images/Blurred%20Background.jpg);
-    background-size: cover;
-}
-
 p
 {
     text-align: justify
