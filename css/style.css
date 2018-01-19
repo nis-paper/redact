@@ -26,7 +26,6 @@ a {
   text-decoration: none;
 }
 
-
 #login
 {
    margin-top: 30vh;
@@ -35,6 +34,12 @@ a {
 #write
 {
    height: 100vh;
+}
+
+#newsLib
+{
+    background: url(../images/Blurred%20Background.jpg);
+    background-size: cover;
 }
 
 p
