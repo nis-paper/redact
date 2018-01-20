@@ -49,11 +49,14 @@ var app = angular.module('NewsApp', ['firebase'])
         }
     }
 });
+
 app.filter('reverse', function() {
   return function(items) {
     return items.slice().reverse();
   };
 });
+
+
 
 app.controller('NewsController', function($scope, $firebaseArray) {
     var ref = firebase.database().ref().child('news');
@@ -61,27 +64,29 @@ app.controller('NewsController', function($scope, $firebaseArray) {
     $scope.send = function() {
     var user = firebase.auth().currentUser;
     var email = user.email;
+    var fintext = " ";
+    
+        var lines = $('#text').val().split('\n');
+        $.each(lines, function(){
+        fintext +="  " + this + "\n";
+        });
+        
+    var short = fintext.substr(0, 100) + "...";
         $scope.news.$add({
             header: $scope.headerText,
-            short: $scope.shortText,
-            text: $scope.Text,
+            short: short,
+            text: fintext,
             redactor: email,
             date: Date.now()
         });
-
+        fintext = '';
     };
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
        $('.modal').modal();
     //you also get the actual event object
     //do stuff, execute functions -- whatever...
 });
-
 });
-
-
-  
-
-
 
 
 
