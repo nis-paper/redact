@@ -68,13 +68,11 @@ app.controller('NewsController', function($scope, $firebaseArray) {
     
         var lines = $('#text').val().split('\n');
         $.each(lines, function(){
-        fintext +="  " + this + "\n";
+        fintext +="<p>" + this + "</p>";
         });
         
-    var short = fintext.substr(0, 100) + "...";
         $scope.news.$add({
             header: $scope.headerText,
-            short: short,
             text: fintext,
             redactor: email,
             date: Date.now()
@@ -87,6 +85,12 @@ app.controller('NewsController', function($scope, $firebaseArray) {
     //do stuff, execute functions -- whatever...
 });
 });
+
+  app.filter('trustAsHtml',['$sce', function($sce) {
+    return function(text) {
+      return $sce.trustAsHtml(text);
+    };
+  }]);
 
 
 

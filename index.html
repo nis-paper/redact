@@ -60,13 +60,9 @@
           <div class="card-content">
             <span class="cardtitle">NEW</span>
               <div class="row">
-                <div class="input-field col s6">
+                <div class="input-field col s12">
                   <input id="header" type="text" ng-model="headerText">
                   <label for="header">Header</label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="short" type="text" ng-model="shortText">
-                  <label for="short">Short</label>
                 </div>
              </div>
            <div class="input-field col s12">
@@ -108,10 +104,10 @@
   <div id="{{m.date}}" class="modal modal-fixed-footer">
     <div class="modal-content">
       <h4>{{m.header}}</h4>
-      <pre>
-      {{m.text}}
-      </pre>
-    </div>
+
+   <p ng-bind-html = "m.text|trustAsHtml" ></p> 
+        
+        </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
     </div>
@@ -135,15 +131,16 @@
   <!-- Modal Structure -->
   <div id="{{m.date}}" class="modal modal-fixed-footer">
     <div class="modal-content">
-      <h4>{{m.header}}</h4>
-      <pre>
-      {{m.text}}
-      </pre>
+        <h4>{{m.header}}</h4>
+      
+  <p ng-bind-html = "m.text|trustAsHtml" ></p> 
+        
     </div>
     <div class="modal-footer">
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
     </div>
   </div>
+         
           </div>
                    </div>
                 <!-- NgRepeatEnd -->
