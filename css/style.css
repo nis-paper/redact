@@ -22,32 +22,20 @@ a {
    height: 100vh;
 }
 
-p
-{
-    text-align: justify
-}
-
-iframe
-{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-}
-
-.card-title
-{
-    color: #fff;
-    text-decoration-color: #fff;
-}
-
 .first .card-title
 {
     font-size: 200%
 }
 
+.card-action
+{
+    height: 60px;
+}
 
+.modal
+{
+width: 90% !important ; height: 100% !important ; 
+}
 
 .second
 {

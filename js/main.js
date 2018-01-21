@@ -79,8 +79,21 @@ app.controller('NewsController', function($scope, $firebaseArray) {
         });
         fintext = '';
     };
+    
     $scope.$on('ngRepeatFinished', function(ngRepeatFinishedEvent) {
-       $('.modal').modal();
+       $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .9, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 300, // Transition out duration
+      startingTop: '4%', // Starting top style attribute
+      endingTop: '10%', // Ending top style attribute
+      ready: function(modal, trigger) { // Callback for Modal open. Modal and trigger parameters available.
+      
+        console.log(modal, trigger);
+      },
+      complete: function() { } // Callback for Modal close
+    });
     //you also get the actual event object
     //do stuff, execute functions -- whatever...
 });
